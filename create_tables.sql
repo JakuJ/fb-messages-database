@@ -1,0 +1,28 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE Conversations (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Title NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Users (
+    Name NVARCHAR(100) PRIMARY KEY
+);
+
+CREATE TABLE Participants (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Conversation_ID INTEGER NOT NULL,
+    User_Name NVARCHAR(100) NOT NULL,
+    FOREIGN KEY(Conversation_ID) REFERENCES Conversations(ID),
+    FOREIGN KEY(User_Name) REFERENCES Users(Name)
+);
+
+CREATE TABLE Messages (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Conversation_ID INTEGER NOT NULL,
+    User_Name NVARCHAR(100) NOT NULL,
+    Timestamp INTEGER NOT NULL,
+    Content TEXT NOT NULL,
+    FOREIGN KEY(Conversation_ID) REFERENCES Conversations(ID),
+    FOREIGN KEY(User_Name) REFERENCES Users(Name)
+);
