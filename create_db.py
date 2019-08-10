@@ -8,7 +8,7 @@ DB_SCRIPT_PATH = './create_tables.sql'
 DATA_DIR = './messages'
 TARGET_DIRS = [os.path.join(DATA_DIR, folder) for folder in ['inbox', 'archived_threads', 'message_requests']]
 
-if __name__ == "__main__":
+def main():
     # * remove DB if already exists, it's fast anyway
     if os.path.exists(DB_NAME):
         os.remove(DB_NAME)
@@ -62,3 +62,6 @@ if __name__ == "__main__":
                                     ])
     
     print("Database created successfully")
+
+if __name__ == '__main__':
+    main()
