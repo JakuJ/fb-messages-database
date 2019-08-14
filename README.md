@@ -7,10 +7,10 @@
 
 ### How to use
 
-Run the `crete_db.py` python script in the directory to create a SQLite3 database of all your FB messages.
+Run the `create_db.py` python script in the directory to create a SQLite3 database of all your FB messages.
 
 The database structure allows for easy querying of conversation data.
 
-The attached notebook allows you to play with some statistics regarding a specified word.
+The attached toy notebook allows you to play with some statistics regarding a specified word.
 
 You have to have `jupyter notebook` installed to run the notebook.
